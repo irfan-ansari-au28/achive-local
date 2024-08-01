@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Georama:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap"); */
+
+/* Reset margins and paddings to remove browser inconsistencies */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a base font family and size */
+html {
+  font-size: 16px; /* Base font size */
+  font-family: 'Arial', sans-serif; /* Fallback to a system font */
+}
+
+
+:root {
+  /* fonts */
+  --body-body-6-14: Georama;
+  --font-segoe-ui: "Segoe UI";
+  --headers-heading3-24: Manrope;
+
+  /* font sizes */
+  --body-body-6-14-size: 14px;
+  --body-body-3-16-size: 16px;
+  --font-size-mid: 17px;
+  --font-size-base-6: 16.6px;
+  --heading-h4-24-size: 24px;
+  --font-size-lgi: 19px;
+  --headers-heading4-18-size: 18px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f8f8f8;
+  --light-gray: #f4f6f3;
+  --neutrallight: #edebe9;
+  --ui-element-inactive: #eaeaea;
+  --light-white-200: #fff;
+  --ui-text-primary: #190134;
+  --grey: #4a4a4a;
+  --neutralprimary: #323130;
+  --red-primary: #e31837;
+  --neutralsecondary: #605e5c;
+  --dark-black-600: #555770;
+  --dark-black-400: #c7c9d9;
+  --dark-black-700: #28293d;
+  --color-lavender: rgba(240, 240, 255, 0);
+  --red-hover: #fadfe3;
+  --theblues-200: #ade8f4;
+  --color-powderblue-100: rgba(173, 232, 244, 0.5);
+
+  /* Gaps */
+  --gap-3xs: 10px;
+  --gap-13xl: 32px;
+  --gap-base: 16px;
+  --gap-21xl: 40px;
+  --gap-xl: 20px;
+  --gap-5xs: 8px;
+  --gap-xs: 12px;
+  --gap-3xs-5: 9.5px;
+  --gap-5xl: 24px;
+  --gap-8xs: 5px;
+
+  /* Paddings */
+  --padding-5xl: 24px;
+  --padding-2xs: 11px;
+  --padding-3xs: 10px;
+  --padding-base: 16px;
+  --padding-5xs: 8px;
+  --padding-13xl: 32px;
+  --padding-mini: 15px;
+  --padding-xl: 20px;
+  --padding-11xs: 2px;
+  --padding-10xs-5: 2.5px;
+  --padding-mini-2: 14.2px;
+  --padding-4xs: 9px;
+  --padding-9xs: 4px;
+
+  /* Border radiuses */
+  --br-7xs: 6px;
+  --br-9xs: 4px;
+
+  /* Effects */
+  --elevation-level-0: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  --small-shadow: 0px 2px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Make images and iframes responsive */
+img,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+

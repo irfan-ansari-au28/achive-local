@@ -1,0 +1,56 @@
+/* Login.module.css */
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust the width as necessary */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hiddenLabel {
+    display: none;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    width: 100%;
+    background-color: #FF0000; /* Use the brand's red color */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .button:hover {
+    background-color: #E60000; /* A darker shade for hover effect */
+  }
+  
+  .errorMessage {
+    color: red;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
