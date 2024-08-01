@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import
-{
-default
-as
-DownloadFileIcon
-}
-from
-'@mui/icons-material/Download'
+import { default as DownloadFileIcon } from '@mui/icons-material/Download';
 import {
   Checkbox,
   Table,
@@ -29,7 +22,6 @@ import DownloadIcon from '../../assets/icons/DownloadIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEntityData } from '../../features/entities/searchSlice';
 import PaperLayout from '../PaperLayout/PaperLayout';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 
 import { getPresignedUrl, processBulkDownload } from '../../api/apiService';
 import { setDownloadNotification } from '../../features/entities/entitiesSlice';
@@ -385,7 +377,7 @@ function DynamicTable({ selected, setSelected }) {
                         handleViewDocument(event, getDocumentLink(row))
                       }
                     >
-                      <DownloadFileIcon/>
+                      <DownloadFileIcon />
                     </Button>
                   </TableCell>
                   {columns.map((column) => (

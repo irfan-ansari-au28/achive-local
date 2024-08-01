@@ -104,16 +104,21 @@ const DynamicSearchForm = ({ onSubmit, formData, setFormData }) => {
 
   const handleChange = (displayName, value) => {
     // Changed parameter from fieldName to displayName
-    const field = searchFields.find(
-      (field) => field.displayName === displayName
-    );
-    const formattedValue =
-      field.dataType === 'date' ? serializeDate(value) : value;
-
-    setFormData((prev) => ({
-      ...prev,
-      [displayName]: formattedValue, // Changed from fieldName to displayName
-    }));
+    const field = searchFields.find((field) => field.displayName === displayName);
+    const formattedValue = field.dataType === 'date' ? serializeDate(value) : value;
+  
+    setFormData((prev) => {
+      const updatedFormData = { ...prev };
+  
+      if (formattedValue === null || formattedValue === '') {
+        delete updatedFormData[displayName];
+      } else {
+        updatedFormData[displayName] = formattedValue;
+      }
+  
+      debounceDispatchFormData(updatedFormData);
+      return updatedFormData;
+    });
 
     const newErrors = { ...formErrors };
     if (field.isMandatory && !value) {
@@ -122,11 +127,6 @@ const DynamicSearchForm = ({ onSubmit, formData, setFormData }) => {
       delete newErrors[displayName]; // Changed from fieldName to displayName
     }
     setFormErrors(newErrors);
-
-    debounceDispatchFormData({
-      ...formData,
-      [displayName]: formattedValue, // Changed from fieldName to displayName
-    });
   };
 
   const handleSubmit = () => {

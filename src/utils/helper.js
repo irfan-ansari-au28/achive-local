@@ -83,24 +83,7 @@ export function constructPayload(data) {
       if (!isNaN(date.getTime())) {
         // Check if it's a valid date
         // Check for specific date fields to return date string
-        if (
-          [
-            'START DATE FROM',
-            'START DATE TO',
-            'Start Date From',
-            'Start Date To',
-            'Is Create Date From',
-            'Is Create Date To',
-            'CREATION DATE FROM',
-            'Creation Date From',
-            'Creation Date To',
-            'CREATION DATE TO',
-            'POCREATION FROM',
-            'POCreation From',
-            'POCreation To',
-            'POCREATION TO'
-          ].includes(key)
-        ) {
+        if (dateFields.includes(key)) {
           // Format date as 'YYYYMMDD'
           const formattedDate =
             date.getFullYear().toString() +
@@ -114,7 +97,7 @@ export function constructPayload(data) {
         acc[key] = value; // If not a valid date, use the value as is
       }
     } else {
-      acc[key] = value; // Non-date fields are directly assigned
+      acc[key] = value?.trim() // Non-date fields are directly assigned & trimmed space
     }
     return acc;
   }, {});

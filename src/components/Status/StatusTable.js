@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { getPresignedUrl } from '../../api/apiService';
-import { convertDateFormat, formatDateToLocaleString } from '../../utils/helper';
+import { convertDateFormat } from '../../utils/helper';
 import NoDataCard from '../NoDataCard/NoDataCard';
 
 const columns = [

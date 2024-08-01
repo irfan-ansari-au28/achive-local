@@ -17,7 +17,6 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Button } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
 
-
 const drawerWidth = 180;
 
 const AppBar = styled(MuiAppBar, {
@@ -75,6 +74,17 @@ export default function Dashboard() {
     }
   };
 
+  const handleLogoClick = () => {
+    navigate('/')
+    window.location.reload();
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleLogoClick();
+    }
+  };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -109,14 +119,22 @@ export default function Dashboard() {
               gap: '10px',
             }}
           >
-            <img
-              src={logo}
-              alt="cma Logo"
-              style={{
-                width: 50,
-                height: 'auto',
-              }}
-            />
+            <div
+              role="button"
+              tabIndex="0"
+              onClick={handleLogoClick}
+              onKeyPress={handleKeyPress}
+              style={{cursor: "pointer"}}
+            >
+              <img
+                src={logo}
+                alt="cma Logo"
+                style={{
+                  width: 50,
+                  height: 'auto',
+                }}
+              />
+            </div>
 
             <Button
               sx={{
@@ -156,9 +174,9 @@ export default function Dashboard() {
           <ListItems />
         </List>
       </Drawer>
-      
+
       {/* Router Outlet for Dashboard pages */}
-      
+
       <Box
         component="main"
         sx={{

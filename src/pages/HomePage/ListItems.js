@@ -1,23 +1,41 @@
 import * as React from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import SearchIcon from '@mui/icons-material/Search';
 import DownloadIcon from '../../assets/icons/DownloadIcon';
-import { Link } from 'react-router-dom';
 
 export default function ListItems() {
-  const [selectedIndex, setSelectedIndex] = React.useState(0); // Initialize state to select the first item by default
+  const location = useLocation();
+  
+  const getSelectedIndex = () => {
+    switch (location.pathname) {
+      case '/search':
+        return 0;
+      case '/download':
+        return 1;
+      default:
+        return 0; // Default to the first item if the route does not match
+    }
+  };
+
+  const [selectedIndex, setSelectedIndex] = React.useState(getSelectedIndex);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index); // Update the selected index state
   };
 
+  React.useEffect(() => {
+    setSelectedIndex(getSelectedIndex());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
+
   return (
     <React.Fragment>
       <ListItemButton
         component={Link}
-        to="search"
+        to="/search"
         selected={selectedIndex === 0} // Apply the selected prop
         onClick={(event) => handleListItemClick(event, 0)} // Handle click
         sx={{ marginTop: 2 }}
@@ -29,7 +47,7 @@ export default function ListItems() {
       </ListItemButton>
       <ListItemButton
         component={Link}
-        to="download"
+        to="/download"
         selected={selectedIndex === 1} // Apply the selected prop
         onClick={(event) => handleListItemClick(event, 1)} // Handle click
         sx={{ marginTop: 2 }}

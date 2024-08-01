@@ -6,8 +6,8 @@ export const APP_TYPES = {
 export const dateFields = [
   'Year From',
   'Year To',
-  'Is Create Date From',
-  'Is Create Date To',
+  'IS Create Date From',
+  'IS Create Date To',
   'START DATE FROM',
   'START DATE TO',
   'Start Date From',
@@ -19,5 +19,7 @@ export const dateFields = [
   'POCREATION FROM',
   'POCreation From',
   'POCreation To',
-  'POCREATION TO'
+  'POCREATION TO',
+  'PO Creation From',
+  'PO Creation To'
 ];
